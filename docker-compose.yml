@@ -3,7 +3,7 @@ services:
     image: grafana/grafana
     container_name: grafana
     networks:
-      - frontend
+      frontend:
     environment:
       TZ: ${TZ}
       GF_SERVER_ROOT_URL: "https://${GF_SERVER_ROOT_URL}"
@@ -30,4 +30,6 @@ services:
 
 networks:
   frontend:
+    external: true
+  backend:
     external: true
